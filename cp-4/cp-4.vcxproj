@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\4-2.cpp" />
+    <ClCompile Include="..\4-3.cpp" />
     <ClCompile Include="grade.cpp" />
     <ClCompile Include="mainold.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
