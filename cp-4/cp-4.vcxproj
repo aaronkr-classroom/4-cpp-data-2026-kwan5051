@@ -127,7 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="mainold.cpp" />
+    <ClCompile Include="grade.cpp" />
+    <ClCompile Include="mainold.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="median.cpp" />
+    <ClCompile Include="newmain.cpp" />
+    <ClCompile Include="Student_info.cpp" />
+    <ClCompile Include="Student_info.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="grade.h" />
+    <ClInclude Include="median.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

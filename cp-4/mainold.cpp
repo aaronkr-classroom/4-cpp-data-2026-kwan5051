@@ -63,37 +63,5 @@ istream& read_hw(istream& in, vector<double>& hw) {
 	}
 }
 
-//중간고사 점수, 기말고사 점수, 과제 점수의 벡터로 학생의 종합
-//점수를 구함. 이 함수는 인수를 복사하지 않고 median  함수가
-//해당 작업을 실행
-double grade(double mid, double fin, const vector<double>& hw) {
-	if (hw.size() == 0) {
-		throw domain_error("No homework!");
-	}
-	
-	//return (mid * 0.2 + fin * 0.4 + (hw1 + hw2 + ....) / hw.size())
-	//new grade() 함수
-	return grade(mid, fin, median(hw));
-}
 
-//계산하는 grade() 함수
-double grade(double midterm, double final, double homework) {
-	return midterm * 0.2 + final * 0.4 + homework * 0.4;
-}
 
-//vector<douvle>의 중앙값을 구함
-//함수를 호출하면 인수로 제공된 벡터를 통째로 복사
-double median(vector<double> vec) {
-	vec_sz size = vec.size();
-
-	if (size == 0) {
-		throw domain_error("Median of empty vector!");
-		return 1;
-	}
-
-	sort(vec.begin(), vec.end());
-	vec_sz mid = size / 2;
-	return size % 2 == 0 //조건
-		? (vec[mid] + vec[mid - 1]) / 2 //참일 때 반환
-		: vec[mid]; //거짓일 때 반환
-}
